@@ -10,7 +10,7 @@ namespace TiendadeRopa.BL
 {
     public class Contexto: DbContext
     {
-        public Contexto(): base(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDBFilename=" +
+        public Contexto(): base(@"Data Source=(LocalDb)\MSSQLLocalDB;AttachDBFilename=" +
             Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\TiendadeRopaDB.mdf")
         {
 
@@ -23,7 +23,9 @@ namespace TiendadeRopa.BL
 
         public DbSet<Producto> Productos { get;  set; }
         public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
 
+        public DbSet<Orden> Ordenes { get; set; }
+        public DbSet<OrdenDetalle> OrdenDetalle { get; set; }
     }
-
 }

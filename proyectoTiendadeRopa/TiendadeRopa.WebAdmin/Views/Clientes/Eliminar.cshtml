@@ -1,4 +1,4 @@
-﻿@model TiendadeRopa.BL.Producto
+﻿@model TiendadeRopa.BL.Cliente
 
 @{
     ViewBag.Title = "Eliminar";
@@ -6,51 +6,49 @@
 
 <h2>Eliminar</h2>
 
-<h3>&iquest;Esta Seguro que desea eliminar este producto?</h3>
+<h3>&iquest;Esta seguro que desea eliminar este cliente?</h3>
 <div>
-    <h4>Producto</h4>
+    <h4>Cliente</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Descripcion)
+            @Html.DisplayNameFor(model => model.Nombre)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Descripcion)
+            @Html.DisplayFor(model => model.Nombre)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Categoria)
+            @Html.DisplayNameFor(model => model.Telefono)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Categoria.Descripcion)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Precio)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Precio)
+            @Html.DisplayFor(model => model.Telefono)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.UrlImagen)
+            @Html.DisplayNameFor(model => model.Direccion)
         </dt>
 
         <dd>
-            <img src="@Model.UrlImagen" alt="@Model.Descripcion" style="width:200px; height:auto;" />
+            @Html.DisplayFor(model => model.Direccion)
         </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.Activo)
         </dt>
+
         <dd>
             @Html.DisplayFor(model => model.Activo)
         </dd>
+
     </dl>
+
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
+
         <div class="form-actions no-color">
             <input type="submit" value="Eliminar" class="btn btn-default" /> |
             @Html.ActionLink("Regresar a la lista", "Index")
